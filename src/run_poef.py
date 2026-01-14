@@ -1,5 +1,4 @@
 import os
-os.environ["CUDA_VISIBLE_DEVICES"] = "0,1"
 import logging
 import argparse
 from transformers import set_seed
@@ -58,10 +57,10 @@ if __name__ == '__main__':
     parser.add_argument('--output_path', type=str, default='../results', help='Path to the output file')
 
     parser.add_argument('--attack_model_path', type=str, default='Qwen/Qwen2.5-7B-Instruct', help='Path to the attack model')
-    parser.add_argument('--attack_model_name', type=str,  default='qwen-7b-chat', choices=['llama-3', 'mistral', 'qwen-7b-chat'], help='Attack model conversation template')
+    parser.add_argument('--attack_model_name', type=str,  default='qwen-7b-chat', help='Attack model conversation template')
 
     parser.add_argument('--target_model_path', type=str, default='Qwen/Qwen2.5-7B-Instruct', help='Path to the target model')
-    parser.add_argument('--target_model_name', type=str,  default='qwen-7b-chat', choices=['llama-3', 'mistral', 'qwen-7b-chat'], help='Target model conversation template')
+    parser.add_argument('--target_model_name', type=str,  default='qwen-7b-chat', help='Target model conversation template')
 
     parser.add_argument('--jailbreak_prompt_length', type=int, default=10, help='Length of the jailbreak prompt')
     parser.add_argument('--num_turb_sample', type=int, default=64, help='Number of samples for Turbo')
